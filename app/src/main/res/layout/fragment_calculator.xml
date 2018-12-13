@@ -23,7 +23,7 @@
             tools:text="Current Grade" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText_calculate_current"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -45,12 +45,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.509"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4"
+            app:layout_constraintTop_toBottomOf="@+id/editText_calculate_current"
             app:layout_constraintVertical_bias="0.085"
             tools:text="Wanted Grade" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/editText_calculate_wanted"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -71,12 +71,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText5"
+            app:layout_constraintTop_toBottomOf="@+id/editText_calculate_wanted"
             app:layout_constraintVertical_bias="0.115"
             tools:text="Percent of Grade" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/editText_calculate_percent"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -89,7 +89,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button_calculate_calculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Calculate"
@@ -97,6 +97,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+            app:layout_constraintTop_toBottomOf="@+id/editText_calculate_percent" />
 
 </android.support.constraint.ConstraintLayout>
