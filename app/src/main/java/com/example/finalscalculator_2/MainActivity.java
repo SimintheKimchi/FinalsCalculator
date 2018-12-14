@@ -14,12 +14,6 @@ import android.widget.Toast;
 //implement the interface OnNavigationItemSelectedListener in your activity class
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private EditText current;
-    private EditText wanted;
-    private EditText percent;
-    private double needed;
-    private Button calculate;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,26 +25,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
-
-        wireWidgets();
-
-        calculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                double c = Double.parseDouble(current.getText().toString());
-                double w = Double.parseDouble(wanted.getText().toString());
-                double p = Double.parseDouble(percent.getText().toString());
-                needed = (w - c * (100% - p)) / p;
-                Toast.makeText(MainActivity.this, "You need" + needed + ":)", Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    private void wireWidgets() {
-        current = findViewById(R.id.editText_calculate_current);
-        wanted = findViewById(R.id.editText_calculate_wanted);
-        percent = findViewById(R.id.editText_calculate_percent);
-        calculate = findViewById(R.id.button_calculate_calculate);
     }
 
 
