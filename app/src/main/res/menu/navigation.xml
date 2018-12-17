@@ -3,10 +3,12 @@
 
     <item
         android:id="@+id/navigation_calculate"
-        android:title="Calculator" />
+        android:title="Calculator"
+        android:icon="@drawable/calculator"/>
 
     <item
         android:id="@+id/navigation_previous"
-        android:title="Previous Calculations" />
+        android:title="Previous Calculations"
+        android:icon="@drawable/ic_previous" />
 
 </menu>
