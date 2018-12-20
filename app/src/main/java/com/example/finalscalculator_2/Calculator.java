@@ -16,11 +16,9 @@ import java.text.DecimalFormat;
 
 
 public class Calculator extends Fragment {
-
-
-    private EditText current;
-    private EditText wanted;
-    private EditText percent;
+    public EditText current;
+    public EditText wanted;
+    public EditText percent;
     private double needed;
     private Button calculate;
 
@@ -55,5 +53,43 @@ public class Calculator extends Fragment {
         calculate = rootView.findViewById(R.id.button_calculate_calculate);
     }
 
+    public EditText getCurrent() {
+        return current;
+    }
 
+    public void setCurrent(EditText current) {
+        this.current = current;
+    }
+
+    public EditText getWanted() {
+        return wanted;
+    }
+
+    public void setWanted(EditText wanted) {
+        this.wanted = wanted;
+    }
+
+    public EditText getPercent() {
+        return percent;
+    }
+
+    public void setPercent(EditText percent) {
+        this.percent = percent;
+    }
+
+    public double getNeeded() {
+        return needed;
+    }
+
+    public void setNeeded(double needed) {
+        this.needed = needed;
+    }
+
+    public Button getCalculate() {
+        return calculate;
+    }
+
+    public void setCalculate(Button calculate) {
+        this.calculate = calculate;
+    }
 }
