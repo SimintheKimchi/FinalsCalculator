@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_main);
 
         //loading the default fragment
-        loadFragment(new Calculator());
+        loadFragment(new FinalsCalculator());
 
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.navigation);
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         switch (item.getItemId()) {
             case R.id.navigation_calculate:
-                fragment = new Calculator();
+                fragment = new FinalsCalculator();
                 break;
 
             case R.id.navigation_previous:

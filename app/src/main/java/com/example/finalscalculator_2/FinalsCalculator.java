@@ -3,7 +3,6 @@ package com.example.finalscalculator_2;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,17 +14,22 @@ import android.widget.Toast;
 import java.text.DecimalFormat;
 
 
-public class Calculator extends Fragment {
+public class FinalsCalculator extends Fragment {
     public EditText current;
     public EditText wanted;
     public EditText percent;
     private double needed;
     private Button calculate;
 
+    public String c;
+    public String w;
+    public String p;
+    public String n;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_calculator, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_finals, container, false);
         wireWidgets(rootView);
 
         calculate.setOnClickListener(new View.OnClickListener() {
@@ -39,11 +43,22 @@ public class Calculator extends Fragment {
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String formatted = decimalFormat.format(needed);
 
+                setVariables();
+
+                Previous gc = new Previous();
+                gc.setPrevious();
+
                 Toast.makeText(getActivity(), "You need a " + formatted + "%.", Toast.LENGTH_LONG).show();
             }
         });
 
         return rootView;
+    }
+
+    public void setVariables(){
+        c = (current.getText().toString());
+        w = (wanted.getText().toString());
+        p = (percent.getText().toString());
     }
 
     private void wireWidgets(View rootView) {
