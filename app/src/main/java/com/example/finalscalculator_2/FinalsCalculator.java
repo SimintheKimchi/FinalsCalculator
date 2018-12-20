@@ -43,11 +43,6 @@ public class FinalsCalculator extends Fragment {
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String formatted = decimalFormat.format(needed);
 
-                setVariables();
-
-                Previous gc = new Previous();
-                gc.setPrevious();
-
                 Toast.makeText(getActivity(), "You need a " + formatted + "%.", Toast.LENGTH_LONG).show();
             }
         });
@@ -55,56 +50,10 @@ public class FinalsCalculator extends Fragment {
         return rootView;
     }
 
-    public void setVariables(){
-        c = (current.getText().toString());
-        w = (wanted.getText().toString());
-        p = (percent.getText().toString());
-    }
-
     private void wireWidgets(View rootView) {
         current = rootView.findViewById(R.id.editText_calculate_current);
         wanted = rootView.findViewById(R.id.editText_calculate_wanted);
         percent = rootView.findViewById(R.id.editText_calculate_percent);
         calculate = rootView.findViewById(R.id.button_calculate_calculate);
-    }
-
-    public EditText getCurrent() {
-        return current;
-    }
-
-    public void setCurrent(EditText current) {
-        this.current = current;
-    }
-
-    public EditText getWanted() {
-        return wanted;
-    }
-
-    public void setWanted(EditText wanted) {
-        this.wanted = wanted;
-    }
-
-    public EditText getPercent() {
-        return percent;
-    }
-
-    public void setPercent(EditText percent) {
-        this.percent = percent;
-    }
-
-    public double getNeeded() {
-        return needed;
-    }
-
-    public void setNeeded(double needed) {
-        this.needed = needed;
-    }
-
-    public Button getCalculate() {
-        return calculate;
-    }
-
-    public void setCalculate(Button calculate) {
-        this.calculate = calculate;
     }
 }
