@@ -3,6 +3,7 @@ package com.example.finalscalculator_2;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import java.text.DecimalFormat;
+
+
 public class Calculator extends Fragment {
+
 
     private EditText current;
     private EditText wanted;
@@ -22,10 +27,6 @@ public class Calculator extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //just change the fragment_dashboard
-        //with the fragment you want to inflate
-        //like if the class is HomeFragment it should have R.layout.home_fragment
-        //if it is DashboardFragment it should have R.layout.fragment_dashboard
         View rootView = inflater.inflate(R.layout.fragment_calculator, container, false);
         wireWidgets(rootView);
 
@@ -36,15 +37,11 @@ public class Calculator extends Fragment {
                 double w = Double.parseDouble(wanted.getText().toString());
                 double p = Double.parseDouble(percent.getText().toString());
                 needed = (100 * w - (100 - p) * c) / p;
-                if(needed >= 85){
-                    Toast.makeText(getActivity(), "You need an " + needed + "% \uD83D\uDE33", Toast.LENGTH_LONG).show();
-                }
-                else if(65 <= needed && needed > 85){
-                    Toast.makeText(getActivity(), "You need an " + needed + "% \uD83D\uDE0A", Toast.LENGTH_LONG).show();
-                }
-                else if(needed < 65){
-                    Toast.makeText(getActivity(), "You need an " + needed + "% \uD83D\uDE34 ezpz", Toast.LENGTH_LONG).show();
-                }
+
+                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                String formatted = decimalFormat.format(needed);
+
+                Toast.makeText(getActivity(), "You need a " + formatted + "%.", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -57,4 +54,6 @@ public class Calculator extends Fragment {
         percent = rootView.findViewById(R.id.editText_calculate_percent);
         calculate = rootView.findViewById(R.id.button_calculate_calculate);
     }
+
+
 }

@@ -6,15 +6,31 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class Previous extends Fragment {
+    private EditText cPrev;
+    private EditText wPrev;
+    private EditText pPrev;
+    private EditText nPrev;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //just change the fragment_dashboard
-        //with the fragment you want to inflate
-        //like if the class is HomeFragment it should have R.layout.home_fragment
-        //if it is DashboardFragment it should have R.layout.fragment_dashboard
-        return inflater.inflate(R.layout.fragment_previous, null);
+        View rootView = inflater.inflate(R.layout.fragment_calculator, container, false);
+        wireWidgets(rootView);
+
+        return rootView;
     }
+
+
+    private void wireWidgets(View rootView) {
+        cPrev = rootView.findViewById(R.id.textView_previous_current);
+        wPrev = rootView.findViewById(R.id.textView_previous_wanted);
+        pPrev = rootView.findViewById(R.id.textView_previous_percent);
+        nPrev = rootView.findViewById(R.id.textView_previous_needed);
+    }
+
+
 }
